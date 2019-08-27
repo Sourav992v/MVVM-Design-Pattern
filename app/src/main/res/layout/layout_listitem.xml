@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data class="ItemListBinding">
+        <variable
+            name="model"
+            type="com.sourav.developer.mvvmdesignpattern.models.NicePlace" />
+    </data>
+    <RelativeLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circle_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="16dp"
+            android:src="@{model.imageUrl}" />
+
+        <TextView
+            android:id="@+id/image_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:text="@{model.title}"
+            android:layout_toEndOf="@+id/circle_image"
+            android:textSize="16sp"
+            android:layout_marginStart="30dp"
+            tools:text="Places" />
+
+    </RelativeLayout>
+</layout>
